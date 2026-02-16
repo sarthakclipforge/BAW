@@ -79,14 +79,14 @@ export default function AboutPage() {
                 </div>
                 <div className="max-w-screen-xl mx-auto space-y-6">
                     <div className="w-full h-[500px] overflow-hidden rounded-[32px] relative">
-                        <img alt="Team meeting in a modern office with large windows" className="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAxI0-_bzojxGTLdlWi9Ia5cgLidLCYkmaglXV1gG4gi0ly1ZJFXE1r7tsIGoc5g-k-nW7HySPRW5_XFNOD9-z8Ho3vW8LWNn0jH1X5A15Y05FASLAc-twQ-rYz0Vvvboh-MycXeAaDsnYLw8ozzjdOX7tA0eem4B1x06ZB2ZP4vTTdwl7CFnOwHYd-uarzdk9XsP5hEd-8dtqqx3C9nfzCDLfy_m3wbOCdC2GfH04sSzXNtp0JxUl1ek1d3ykK3_eTgAdahwqj9Y" />
+                        <img loading="lazy" alt="Team meeting in a modern office with large windows" className="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAxI0-_bzojxGTLdlWi9Ia5cgLidLCYkmaglXV1gG4gi0ly1ZJFXE1r7tsIGoc5g-k-nW7HySPRW5_XFNOD9-z8Ho3vW8LWNn0jH1X5A15Y05FASLAc-twQ-rYz0Vvvboh-MycXeAaDsnYLw8ozzjdOX7tA0eem4B1x06ZB2ZP4vTTdwl7CFnOwHYd-uarzdk9XsP5hEd-8dtqqx3C9nfzCDLfy_m3wbOCdC2GfH04sSzXNtp0JxUl1ek1d3ykK3_eTgAdahwqj9Y" />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="h-[400px] overflow-hidden rounded-[32px] relative">
-                            <img alt="People collaborating in a bright workspace" className="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABpsJN56VDsmLglE2IoZRVYo_bZ4Mv8bjCyXlPNoGTxKVLRE7Y-89EgCcv0EyE8GVv3F6ane4oy1aHzh5brA5Xnn5NEJpIDWbpzgbAIxkqreVsJdqkISyEbZpF3dGxwG5Af8OK-mtu1Tz3LN3kAAzpWLMsvxVpjNMOYhcuU7JOS6MlNUBP3fWvcmf-5AyspZ_qYTL_HvBYh5UFqxisseWdaVIDHz6b3iUM_KncAq_f7uOGO3CubqnL-QRPmNwbkMG-_itgjl1FI_A" />
+                            <img loading="lazy" alt="People collaborating in a bright workspace" className="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABpsJN56VDsmLglE2IoZRVYo_bZ4Mv8bjCyXlPNoGTxKVLRE7Y-89EgCcv0EyE8GVv3F6ane4oy1aHzh5brA5Xnn5NEJpIDWbpzgbAIxkqreVsJdqkISyEbZpF3dGxwG5Af8OK-mtu1Tz3LN3kAAzpWLMsvxVpjNMOYhcuU7JOS6MlNUBP3fWvcmf-5AyspZ_qYTL_HvBYh5UFqxisseWdaVIDHz6b3iUM_KncAq_f7uOGO3CubqnL-QRPmNwbkMG-_itgjl1FI_A" />
                         </div>
                         <div className="h-[400px] overflow-hidden rounded-[32px] relative">
-                            <img alt="Designers discussing project details at a desk" className="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDdcLnFAISzRcgsoB6J0iD8MBHSWYwW3HlR5DXAAgxaa4H7fk1auY5Ze8JU8oThwq6qt2b7Kam39-YKE5aNnqSAuvpur4B0-gWvg4RLtX-VzBW40qy7Ye_uYri9Z5Db4C4ro6HlXnD_JKHl4NhCw6H1ZdpUm2deVMLaXah-uUNmU5wsggRbjvqxWE9fPsPy3Kdjb7_WMKb-DYvvr-_fQ8RXxJOMx41XJJRYPyUYCsw1E4eyTeSjYUX_1XHy_DrkxSMVSyev84P4Fg" />
+                            <img loading="lazy" alt="Designers discussing project details at a desk" className="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDdcLnFAISzRcgsoB6J0iD8MBHSWYwW3HlR5DXAAgxaa4H7fk1auY5Ze8JU8oThwq6qt2b7Kam39-YKE5aNnqSAuvpur4B0-gWvg4RLtX-VzBW40qy7Ye_uYri9Z5Db4C4ro6HlXnD_JKHl4NhCw6H1ZdpUm2deVMLaXah-uUNmU5wsggRbjvqxWE9fPsPy3Kdjb7_WMKb-DYvvr-_fQ8RXxJOMx41XJJRYPyUYCsw1E4eyTeSjYUX_1XHy_DrkxSMVSyev84P4Fg" />
                         </div>
                     </div>
                 </div>
@@ -207,7 +207,7 @@ export default function AboutPage() {
                                     <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">{member.role}</span>
                                 </div>
                                 <div className="aspect-[4/3] rounded-[32px] overflow-hidden bg-gray-200">
-                                    <img alt={member.alt} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src={member.img} />
+                                    <img loading="lazy" alt={member.alt} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src={member.img} />
                                 </div>
                             </div>
                         ))}

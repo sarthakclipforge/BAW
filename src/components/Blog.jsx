@@ -27,14 +27,14 @@ export default function Blog() {
                                 </div>
                             </div>
                             <div className="rounded-xl overflow-hidden h-[300px] bg-black relative mt-auto mx-2 mb-2">
-                                <img alt="Motion Design" className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsC0yN88gI35_gfWpuRjaZxkOHEk7hUejqSZgVqSQ5ELtcs-z_yy3NJ7087YmUZxBZBezWVxoquLIRxi-08GJQMEI60QR-DbPOqkhTQlYw-ZOMoo2vo5-dpnoTeqXj7ogORKgw0mCjTFWJm6zbckgxePm0X9q3HqB9E6hOy_FYnbf0AyPRln6woRevlhQ6tmHP0CkOU6Y4Wr7CJ7QR8j-_vTZTwOWNmgYirrn3Z5Kj77-36oP7H6rdaxPO3LmoAoQnAEfvZ233cD4" />
+                                <img loading="lazy" alt="Motion Design" className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsC0yN88gI35_gfWpuRjaZxkOHEk7hUejqSZgVqSQ5ELtcs-z_yy3NJ7087YmUZxBZBezWVxoquLIRxi-08GJQMEI60QR-DbPOqkhTQlYw-ZOMoo2vo5-dpnoTeqXj7ogORKgw0mCjTFWJm6zbckgxePm0X9q3HqB9E6hOy_FYnbf0AyPRln6woRevlhQ6tmHP0CkOU6Y4Wr7CJ7QR8j-_vTZTwOWNmgYirrn3Z5Kj77-36oP7H6rdaxPO3LmoAoQnAEfvZ233cD4" />
                                 <span className="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white text-[9px] font-bold px-2 py-1 rounded">FEATURED</span>
                             </div>
                         </div>
                         <div className="space-y-6">
                             <div className="bg-white p-3 rounded-card border border-border-light flex gap-6 group cursor-pointer hover:shadow-lg transition-all items-center">
                                 <div className="w-[160px] h-[120px] rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
-                                    <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmtUVlVkRanmu7pDSQlGaLOb6Kl9NF7m2GGPC60fzvojMr0jfokmjKKq7GTPJzhvwgXF4FCqZzrs151jf5i5qXbY0TNbj_V-L2z7Aoceey3lu1jzeibaOR0gw72XAPtWRsKoB2KXCzwQmXqSjdDbeUKzkgwBCZ7khmKqRXUydhA1Khhc5nE3is7YdHbQz8BV0npZqSQvDfnKfCPDBPozxRYbHvuMkoddeZMo-pAdYUpcRCTehRpJiWbIG_nNMQtpgtqMFS4qKSGM4" />
+                                    <img loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmtUVlVkRanmu7pDSQlGaLOb6Kl9NF7m2GGPC60fzvojMr0jfokmjKKq7GTPJzhvwgXF4FCqZzrs151jf5i5qXbY0TNbj_V-L2z7Aoceey3lu1jzeibaOR0gw72XAPtWRsKoB2KXCzwQmXqSjdDbeUKzkgwBCZ7khmKqRXUydhA1Khhc5nE3is7YdHbQz8BV0npZqSQvDfnKfCPDBPozxRYbHvuMkoddeZMo-pAdYUpcRCTehRpJiWbIG_nNMQtpgtqMFS4qKSGM4" />
                                 </div>
                                 <div className="py-2 pr-4 flex flex-col h-full justify-between flex-1">
                                     <div>
@@ -57,7 +57,7 @@ export default function Blog() {
                             </div>
                             <div className="bg-white p-3 rounded-card border border-border-light flex gap-6 group cursor-pointer hover:shadow-lg transition-all items-center">
                                 <div className="w-[160px] h-[120px] rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
-                                    <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqJ1FatKNWMDAWG3zmOAI_7uBQa1YT7C8ZstuWj2nDUM6kga3xb1Q5SLxs7Oc9sGlOosEHTjJlkzGxdvWM4h5GLfPaj8Qmsp4wjNDKscuu-JiE_k5TpeMmpdrd3ibCkT6lAHK98s0l2sk2gU8iHpdPKtjQKNWss0Ug-szaP8ky0R5oiKbfkQNn_t-5gkI9gHti3icRsZV6KyOO75GqnUpDTtBFvncdAMl-5Zee6gQNUO-IwmLP7XIUudKeGzu2THZpqngexIMlzaU" />
+                                    <img loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqJ1FatKNWMDAWG3zmOAI_7uBQa1YT7C8ZstuWj2nDUM6kga3xb1Q5SLxs7Oc9sGlOosEHTjJlkzGxdvWM4h5GLfPaj8Qmsp4wjNDKscuu-JiE_k5TpeMmpdrd3ibCkT6lAHK98s0l2sk2gU8iHpdPKtjQKNWss0Ug-szaP8ky0R5oiKbfkQNn_t-5gkI9gHti3icRsZV6KyOO75GqnUpDTtBFvncdAMl-5Zee6gQNUO-IwmLP7XIUudKeGzu2THZpqngexIMlzaU" />
                                 </div>
                                 <div className="py-2 pr-4 flex flex-col h-full justify-between flex-1">
                                     <div>

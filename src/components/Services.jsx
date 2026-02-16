@@ -57,7 +57,7 @@ export default function Services() {
                     </div>
                     <div className="relative group mt-8 lg:mt-0 self-center">
                         <div className="relative rounded-[32px] overflow-hidden border border-border-light shadow-2xl bg-black max-w-[540px] ml-auto">
-                            <img alt="Coding and development" className="w-full h-auto object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvuhNar5WmNa_O_drZATeadC-wGnIfaZbJgEPQyTBCCCHk7uGaHkrltTTGHLGZ5BFuc0gujx4izQAAt0OrOYobEzOjUSqfDdM_FAVj4iORBg5myIxcc__IBJdlRDxIwvNkLsMpl7feqDMj4VO6YvLraWHjISHDBc_CmYPljUXbXlNXo3zcp5q70UsakaBdrzQZNZH5k7MW-OZghL3rLCODTpNpGWArsXswuqYPR25zPHiTSJRtxQvW8dIQyD8uOq35YWhSQOJYDZ8" />
+                            <img loading="lazy" alt="Coding and development" className="w-full h-auto object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvuhNar5WmNa_O_drZATeadC-wGnIfaZbJgEPQyTBCCCHk7uGaHkrltTTGHLGZ5BFuc0gujx4izQAAt0OrOYobEzOjUSqfDdM_FAVj4iORBg5myIxcc__IBJdlRDxIwvNkLsMpl7feqDMj4VO6YvLraWHjISHDBc_CmYPljUXbXlNXo3zcp5q70UsakaBdrzQZNZH5k7MW-OZghL3rLCODTpNpGWArsXswuqYPR25zPHiTSJRtxQvW8dIQyD8uOq35YWhSQOJYDZ8" />
                             <div className="absolute bottom-8 left-8 right-8">
                                 <div className="bg-[#1e1e1e]/90 backdrop-blur border border-white/10 rounded-xl p-5 text-gray-300 font-mono text-[13px] shadow-2xl">
                                     <div className="flex gap-1.5 mb-3">

@@ -26,7 +26,7 @@ export default function Projects() {
                             </span>
                         </div>
                         <div className="bg-[#111] rounded-[32px] overflow-hidden aspect-[4/3] relative border border-border-light shadow-sm flex items-center justify-center p-12">
-                            <img alt="Atlas project" className="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDyi-beGxR5mWboq4-97RO9e00l98NzhA0hl_LG0gxQFGybNMLKDR67-6MW0_dnmBb28Y-XJ1ayvygepHh6r13UaRkOqoqe7V8bjpdW_YIvzqvZZgnd3RJFtrc1sUrsbLTCVJ6tsEBLItmVJ0scECR2FqQUB7WNTNOQ1DPxFvBnhrYVWIx7BPKYGWJxQg8hfLzvk5V_0hBczuFXfIGXw7vywsRZb8stRtVLd1OcpcgIWie3fsh9oycWhIvitk8eaRoEmwslTjssns" />
+                            <img loading="lazy" alt="Atlas project" className="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDyi-beGxR5mWboq4-97RO9e00l98NzhA0hl_LG0gxQFGybNMLKDR67-6MW0_dnmBb28Y-XJ1ayvygepHh6r13UaRkOqoqe7V8bjpdW_YIvzqvZZgnd3RJFtrc1sUrsbLTCVJ6tsEBLItmVJ0scECR2FqQUB7WNTNOQ1DPxFvBnhrYVWIx7BPKYGWJxQg8hfLzvk5V_0hBczuFXfIGXw7vywsRZb8stRtVLd1OcpcgIWie3fsh9oycWhIvitk8eaRoEmwslTjssns" />
                         </div>
                     </div>
                     <div className="group cursor-pointer md:mt-24">
@@ -66,7 +66,7 @@ export default function Projects() {
                             </span>
                         </div>
                         <div className="bg-[#568233] rounded-[32px] overflow-hidden aspect-[4/3] relative border border-border-light shadow-sm flex items-center justify-center p-0">
-                            <img alt="Orbital Bank project" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnxbAQWjD_cxfIH-N2iB6j46lCxKB35EdqBDTAJ-QEAedGvTh433C3kXuPdUrdgSePKW4G32G1BxiFmbXypdm2SzPtwc1LMEM2QtwEAkA5ESgmFnX9utdbIN9E6CFNSIjYdI9ZoXdeCmJGmCEYAOwNgZFUolfo4pdpcfd4v7cVHlq1SSpfd8LStEJ3J4kURVeDnIUFVzfXIdefynvDmUXkEpc-IQSQc57YGHyznjaCGyps2_THpnCyhg1aQHGYEG3cYSeFnQjfwGU" />
+                            <img loading="lazy" alt="Orbital Bank project" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnxbAQWjD_cxfIH-N2iB6j46lCxKB35EdqBDTAJ-QEAedGvTh433C3kXuPdUrdgSePKW4G32G1BxiFmbXypdm2SzPtwc1LMEM2QtwEAkA5ESgmFnX9utdbIN9E6CFNSIjYdI9ZoXdeCmJGmCEYAOwNgZFUolfo4pdpcfd4v7cVHlq1SSpfd8LStEJ3J4kURVeDnIUFVzfXIdefynvDmUXkEpc-IQSQc57YGHyznjaCGyps2_THpnCyhg1aQHGYEG3cYSeFnQjfwGU" />
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <h4 className="text-[80px] font-thin text-white/20 tracking-[0.5em] w-full text-center">ORBITAL</h4>
                             </div>
