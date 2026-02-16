@@ -1,0 +1,9 @@
+{
+    "watch": [
+        "src",
+        "vite.config.js",
+        "tailwind.config.js"
+    ],
+    "ext": "js,jsx,ts,tsx,json,css,html",
+    "exec": "vite"
+}
