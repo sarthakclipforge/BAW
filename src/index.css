@@ -1,10 +1,21 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Pixeled';
+  src: url('./assets/fonts/Pixeled.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 105%;
+  ascent-override: 85%;
+  descent-override: 15%;
+}
+
 @theme {
   /* Colors */
   --color-primary: #111111;
   --color-primary-hover: #333333;
-  --color-accent-new: #F97316;
+  --color-accent-new: #304fff;
   --color-background: #F8F8F8;
   --color-background-card: #FFFFFF;
   --color-border-light: #E5E5E5;
@@ -17,6 +28,7 @@
   /* Fonts */
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Inter', sans-serif;
+  --font-pixel: 'Pixeled', 'Inter', sans-serif;
 
   /* Font sizes */
   --text-h1: 80px;
@@ -111,4 +123,34 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .font-pixel {
+    font-family: 'Pixeled', 'Inter', sans-serif;
+    font-size: 0.64em;
+    color: var(--color-accent-new);
+    vertical-align: baseline;
+    letter-spacing: 0.03em;
+    line-height: inherit;
+    display: inline;
+  }
+}
+
+@keyframes letter-lock {
+  0% {
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-letter-lock {
+  animation: letter-lock 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }

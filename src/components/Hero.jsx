@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const testimonials = [
     {
@@ -73,11 +73,55 @@ export default function Hero() {
 
     const [currentProject, setCurrentProject] = useState(0);
 
+    const targetWord = 'Design';
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const [letters, setLetters] = useState(Array(targetWord.length).fill(''));
+    const [locked, setLocked] = useState(Array(targetWord.length).fill(false));
+    const lockedRef = useRef(Array(targetWord.length).fill(false));
+
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentProject((prev) => (prev + 1) % projects.length);
         }, 3000);
         return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const scrambleInterval = setInterval(() => {
+            setLetters(prev =>
+                prev.map((ch, i) =>
+                    lockedRef.current[i] ? targetWord[i] : chars[Math.floor(Math.random() * chars.length)]
+                )
+            );
+        }, 40);
+
+        // Lock each letter one by one with staggered delay
+        const timers = targetWord.split('').map((_, i) =>
+            setTimeout(() => {
+                lockedRef.current[i] = true;
+                setLocked(prev => {
+                    const next = [...prev];
+                    next[i] = true;
+                    return next;
+                });
+                setLetters(prev => {
+                    const next = [...prev];
+                    next[i] = targetWord[i];
+                    return next;
+                });
+            }, 600 + i * 150)
+        );
+
+        // Stop scrambling after all letters are locked
+        const stopTimer = setTimeout(() => {
+            clearInterval(scrambleInterval);
+        }, 600 + targetWord.length * 150 + 100);
+
+        return () => {
+            clearInterval(scrambleInterval);
+            timers.forEach(clearTimeout);
+            clearTimeout(stopTimer);
+        };
     }, []);
 
     return (
@@ -108,7 +152,25 @@ export default function Hero() {
 
                 {/* Heading */}
                 <h1 className="text-[56px] leading-[1.05] font-bold tracking-tight mb-6 text-primary max-w-[760px] mx-auto">
-                    Web & Brand Design <br />
+                    Web & Brand{' '}
+                    <span className="font-pixel inline-block relative">
+                        {/* Invisible reference text to hold the exact width */}
+                        <span className="invisible">Design</span>
+                        {/* Animated letters positioned on top */}
+                        <span className="absolute inset-0 flex justify-center">
+                            {letters.map((ch, i) => (
+                                <span
+                                    key={i}
+                                    className={`inline-block text-center ${locked[i] ? 'animate-letter-lock' : ''
+                                        }`}
+                                    style={{ width: `${100 / targetWord.length}%` }}
+                                >
+                                    {ch || '\u00A0'}
+                                </span>
+                            ))}
+                        </span>
+                    </span>
+                    <br />
                     <span className="font-['Playfair_Display'] italic font-normal text-[56px]">For Ambitious Founders</span>
                 </h1>
 

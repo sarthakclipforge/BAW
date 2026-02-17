@@ -113,7 +113,7 @@ export default function ProjectsPage() {
                                 </button>
                             </div>
                             <div className="mt-6 aspect-[4/3] w-full bg-gray-100 rounded-[32px] overflow-hidden relative group">
-                                <img
+                                <img loading="lazy"
                                     alt={project.alt}
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                     src={project.img}
@@ -149,7 +149,7 @@ export default function ProjectsPage() {
                                     <p className="text-sm leading-relaxed text-primary opacity-90 mb-8">{t.quote}</p>
                                 </div>
                                 <div className="flex items-center gap-3 mt-auto">
-                                    <img alt={t.name} className="w-10 h-10 rounded-full object-cover" src={t.avatar} />
+                                    <img loading="lazy" alt={t.name} className="w-10 h-10 rounded-full object-cover" src={t.avatar} />
                                     <div>
                                         <div className="font-semibold text-sm text-primary">{t.name}</div>
                                         <div className="text-xs text-text-secondary">{t.role}</div>
@@ -184,7 +184,7 @@ export default function ProjectsPage() {
                     <div className="flex flex-col md:flex-row justify-between items-center px-4">
                         <div className="flex -space-x-3 order-2 md:order-1 mt-4 md:mt-0">
                             {reviewAvatars.map((src, i) => (
-                                <img key={i} alt={`User ${i + 1}`} className="w-8 h-8 rounded-full border-2 border-background object-cover" src={src} />
+                                <img loading="lazy" key={i} alt={`User ${i + 1}`} className="w-8 h-8 rounded-full border-2 border-background object-cover" src={src} />
                             ))}
                             <div className="flex flex-col justify-center ml-4 pl-2">
                                 <div className="flex text-[10px] text-primary">

@@ -10,7 +10,7 @@ export default {
             colors: {
                 primary: "#111111",
                 "primary-hover": "#333333",
-                "accent-new": "#F97316", // Orange for New pill
+                "accent-new": "#304fff", // Deep blue accent
                 "background": "#F8F8F8", // Off-white
                 "background-card": "#FFFFFF",
                 "border-light": "#E5E5E5",
@@ -23,6 +23,7 @@ export default {
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
                 display: ['Inter', 'sans-serif'],
+                pixel: ['Pixeled', 'Inter', 'sans-serif'],
             },
             fontSize: {
                 'h1': ['80px', { lineHeight: '1.1', letterSpacing: '-0.04em' }],

@@ -101,7 +101,7 @@ export default function BlogPage() {
                                 </div>
                                 <div className={`relative overflow-hidden rounded-[32px] mt-auto ${index === 0 ? 'aspect-[4/3] lg:aspect-auto lg:h-[480px]' : 'h-[280px] lg:h-full bg-gray-100'}`}>
                                     {index === 0 && <span className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md z-10">Featured</span>}
-                                    <img alt={post.alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={post.img} />
+                                    <img loading="lazy" alt={post.alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={post.img} />
                                 </div>
                             </div>
                         ))}
@@ -129,7 +129,7 @@ export default function BlogPage() {
                                     </div>
                                 </div>
                                 <div className="rounded-[32px] overflow-hidden aspect-[4/3] bg-gray-50">
-                                    <img alt={post.alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={post.img} />
+                                    <img loading="lazy" alt={post.alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={post.img} />
                                 </div>
                             </div>
                         ))}
