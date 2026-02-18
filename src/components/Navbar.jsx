@@ -1,34 +1,67 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 export default function Navbar() {
     const [isCompanyDropdownOpen, setIsCompanyDropdownOpen] = useState(false);
+    const navRef = useRef(null);
+
+    useGSAP(() => {
+        // Scroll header effect
+        gsap.to(navRef.current, {
+            scrollTrigger: {
+                trigger: document.body,
+                start: "top top",
+                end: 150,
+                scrub: 1
+            },
+            backgroundColor: "rgba(255, 255, 255, 0.92)",
+            boxShadow: "0 10px 40px -10px rgba(0,0,0,0.08)",
+            paddingTop: "8px",
+            paddingBottom: "8px",
+            border: "1px solid rgba(255, 255, 255, 0.9)",
+            duration: 0.4
+        });
+
+        // Link hover effect (using event delegation or selector)
+        const links = gsap.utils.toArray('.nav-link');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                gsap.to(link, { scale: 1.05, duration: 0.2, ease: "power1.out" });
+            });
+            link.addEventListener('mouseleave', () => {
+                gsap.to(link, { scale: 1, duration: 0.2, ease: "power1.out" });
+            });
+        });
+
+    }, { scope: navRef });
 
     return (
-        <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-white/90 backdrop-blur-xl border border-white/50 shadow-[0_20px_40px_-5px_rgba(0,0,0,0.1)] rounded-full px-2 py-2 w-[94%] max-w-[1000px] transition-all duration-300">
-            <div className="w-full px-4">
-                <div className="flex justify-between items-center h-[56px]">
-                    <Link to="/" className="flex-shrink-0 flex items-center gap-2">
+        <nav ref={navRef} className="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-white/80 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_-4px_rgba(0,0,0,0.08)] rounded-full px-3 py-2 w-[96%] max-w-[1100px] transition-all duration-500 will-change-transform font-sans">
+            <div className="w-full px-2">
+                <div className="flex justify-between items-center h-[46px]">
+                    <Link to="/" className="nav-link flex-shrink-0 flex items-center gap-2 origin-left">
                         <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                             <span className="text-white font-bold text-sm italic font-serif">/</span>
                         </div>
                         <span className="font-bold text-[18px] tracking-tight text-primary">Lamosa</span>
                     </Link>
-                    <div className="hidden md:flex items-center space-x-6 text-[13px] font-medium text-text-secondary">
+                    <div className="hidden md:flex items-center space-x-6 text-[15px] font-medium text-text-secondary">
                         {/* Company Dropdown */}
                         <div
                             className="relative"
                             onMouseEnter={() => setIsCompanyDropdownOpen(true)}
                             onMouseLeave={() => setIsCompanyDropdownOpen(false)}
                         >
-                            <button className={`hover:text-primary transition-colors flex items-center gap-1 py-4 ${isCompanyDropdownOpen ? 'text-primary' : ''}`}>
+                            <button className={`nav-link hover:text-primary transition-colors flex items-center gap-1 py-4 ${isCompanyDropdownOpen ? 'text-primary' : ''}`}>
                                 Company <span className={`material-symbols-outlined text-[16px] transition-transform duration-200 ${isCompanyDropdownOpen ? 'rotate-180' : ''}`}>expand_more</span>
                             </button>
 
                             {/* Invisible bridge to prevent gap */}
                             <div className={`absolute left-0 top-full w-full h-6 ${isCompanyDropdownOpen ? 'block' : 'hidden'}`} />
 
-                            {/* Dropdown Menu - Adjusted for floating pill */}
+                            {/* Dropdown Menu */}
                             <div
                                 className={`absolute -left-20 top-[calc(100%+8px)] bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] border border-gray-100 overflow-hidden transition-all duration-300 ease-out ${isCompanyDropdownOpen
                                     ? 'opacity-100 translate-y-0 pointer-events-auto'
@@ -107,14 +140,14 @@ export default function Navbar() {
                             </div>
                         </div>
 
-                        <Link className="hover:text-primary transition-colors flex items-center gap-1" to="/projects">
+                        <Link className="nav-link hover:text-primary transition-colors flex items-center gap-1" to="/projects">
                             Projects <span className="bg-accent-new text-[10px] text-white px-1.5 py-0.5 rounded ml-1 font-bold">New</span>
                         </Link>
-                        <Link className="hover:text-primary transition-colors flex items-center gap-1" to="/blog">Blog</Link>
-                        <Link className="hover:text-primary transition-colors" to="/about">About us</Link>
+                        <Link className="nav-link hover:text-primary transition-colors flex items-center gap-1" to="/blog">Blog</Link>
+                        <Link className="nav-link hover:text-primary transition-colors" to="/about">About us</Link>
                     </div>
                     <div>
-                        <Link className="bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-full text-[13px] font-medium transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2" to="/contact">
+                        <Link className="bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-full text-[14px] font-medium transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2 hover:scale-105 transform active:scale-95" to="/contact">
                             Contact Us
                         </Link>
                     </div>

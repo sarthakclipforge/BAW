@@ -1,5 +1,8 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import LazyImage from './ui/LazyImage';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 export default function ProjectsPage() {
     const [openFaq, setOpenFaq] = useState(0);
@@ -78,6 +81,85 @@ export default function ProjectsPage() {
         "https://lh3.googleusercontent.com/aida-public/AB6AXuDxc1kZWyVSkIXnmBxTf4S134YlO3d8pYQKttqUKHdVOrwO62LggdApSipOUU0kQKHT_tddGKmxbSN9Z5mD6FLLzujksEHxmtGMAJORhilUKHlshiCoolDU53CryanoMYVPgxWmtCR2Q1Q9FeX8B3fjnHlVzLzyyPExBjeQplpUchhtXnelPM33KqZW6bHL0UoY_lmUgDrhPKBEhHjtJCBgfWFmfJoIagGjTd3uZOWdd6QGrlF5-_-C5XU3dDsrSfQOss69it9QJoE",
     ];
 
+    // Expanded Data for Pagination
+    const allProjects = [
+        ...projects,
+        {
+            name: "Lumina Health",
+            tags: ["App Design", "Branding"],
+            img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2070",
+            alt: "Medical app interface on phone"
+        },
+        {
+            name: "Quant AI",
+            tags: ["Web Design", "Development"],
+            img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=2065",
+            alt: "Abstract data visualization"
+        },
+        {
+            name: "Velox Motors",
+            tags: ["3D Motion", "Web Design"],
+            img: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&q=80&w=2070",
+            alt: "Futuristic car dashboard concept"
+        },
+        {
+            name: "Nexus Logistics",
+            tags: ["UI/UX", "Dashboard"],
+            img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2070",
+            alt: "Logistics shipping container abstract"
+        },
+        {
+            name: "Solstice Energy",
+            tags: ["Branding", "Eco-Tech"],
+            img: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=2070",
+            alt: "Solar panels and green energy concept"
+        },
+        {
+            name: "Cipher Security",
+            tags: ["Cybersec", "Web Design"],
+            img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=2070",
+            alt: "Code on screen cyber security"
+        },
+        {
+            name: "Terraform Arch",
+            tags: ["Architecture", "Portfolio"],
+            img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070",
+            alt: "Modern skyscraper architecture"
+        },
+        {
+            name: "Aero Flight",
+            tags: ["Travel", "App Design"],
+            img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=2074",
+            alt: "Airplane wing in sky"
+        },
+    ];
+
+    // Pagination State
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 4;
+    const totalPages = Math.ceil(allProjects.length / itemsPerPage);
+    const gridRef = useRef(null);
+
+    // Get current items
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentProjects = allProjects.slice(indexOfFirstItem, indexOfLastItem);
+
+    // Scroll to top of grid when page changes
+    useEffect(() => {
+        if (gridRef.current) {
+            gsap.fromTo(gridRef.current.children,
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, stagger: 0.1, duration: 0.8, ease: "power2.out" }
+            );
+            gridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, [currentPage]);
+
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
     return (
         <>
             {/* Hero Section */}
@@ -96,13 +178,13 @@ export default function ProjectsPage() {
 
             {/* Projects Grid */}
             <section className="max-w-screen-xl mx-auto px-6 pb-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {projects.map((project, i) => (
-                        <div key={i} className="bg-white rounded-3xl p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 min-h-[800px]">
+                    {currentProjects.map((project, i) => (
+                        <div key={i} className="bg-white rounded-3xl p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300 flex flex-col">
                             <div className="flex justify-between items-start mb-4">
                                 <div>
                                     <h3 className="text-xl font-semibold mb-3 text-primary">{project.name}</h3>
-                                    <div className="flex gap-2">
+                                    <div className="flex gap-2 flex-wrap">
                                         {project.tags.map((tag) => (
                                             <span key={tag} className="px-3 py-1 bg-gray-100 text-xs font-medium rounded-full text-text-secondary">{tag}</span>
                                         ))}
@@ -112,21 +194,47 @@ export default function ProjectsPage() {
                                     View <span className="material-symbols-outlined border border-gray-300 rounded-full p-1 text-sm">arrow_forward</span>
                                 </button>
                             </div>
-                            <div className="mt-6 aspect-[4/3] w-full bg-gray-100 rounded-[32px] overflow-hidden relative group">
-                                <img
+                            <div className="mt-auto aspect-[4/3] w-full rounded-[32px] overflow-hidden relative group">
+                                <LazyImage
                                     alt={project.alt}
-                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                    className="w-full h-full transform group-hover:scale-105 transition-transform duration-500"
                                     src={project.img}
                                 />
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="text-center mt-12">
-                    <button className="bg-white border border-gray-200 px-6 py-2.5 rounded-full text-sm font-medium shadow-sm hover:bg-gray-50 transition-colors text-primary">
-                        Load More
-                    </button>
-                </div>
+
+                {/* Pagination Controls */}
+                {totalPages > 1 && (
+                    <div className="flex justify-center items-center gap-2 mt-16">
+                        <button
+                            onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+                            disabled={currentPage === 1}
+                            className={`w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 transition-colors ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-gray-50'}`}
+                        >
+                            <span className="material-symbols-outlined text-sm">chevron_left</span>
+                        </button>
+
+                        {[...Array(totalPages)].map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => handlePageChange(i + 1)}
+                                className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium transition-colors ${currentPage === i + 1 ? 'bg-primary text-white' : 'hover:bg-gray-50 border border-gray-200'}`}
+                            >
+                                {i + 1}
+                            </button>
+                        ))}
+
+                        <button
+                            onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
+                            disabled={currentPage === totalPages}
+                            className={`w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 transition-colors ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:bg-gray-50'}`}
+                        >
+                            <span className="material-symbols-outlined text-sm">chevron_right</span>
+                        </button>
+                    </div>
+                )}
             </section>
 
             {/* Testimonials Section */}

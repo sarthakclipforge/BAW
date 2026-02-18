@@ -1,18 +1,49 @@
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 export default function Projects() {
+    const containerRef = useRef(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 75%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        tl.from('.proj-heading', { y: 30, opacity: 0, duration: 0.8 });
+
+        // Target project cards specially
+        gsap.utils.toArray('.proj-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 60,
+                opacity: 0
+            });
+        });
+
+    }, { scope: containerRef });
+
     return (
-        <section className="py-160 bg-white">
+        <section ref={containerRef} className="py-24 bg-white">
             <div className="max-w-screen-xl mx-auto px-6">
                 <div className="text-center mb-24">
-                    <div className="flex items-center justify-center gap-2 mb-6">
-                        <span className="w-2 h-2 rounded-full bg-accent-new"></span>
+                    <div className="proj-heading flex items-center justify-center gap-2 mb-6">
+                        <span id="waypoint-projects" className="w-2 h-2 rounded-full bg-accent-new"></span>
                         <span className="text-[10px] font-bold uppercase text-text-secondary tracking-widest">Projects</span>
                     </div>
-                    <h2 className="text-h2 font-semibold text-primary">Here's what<br />the momentum looks like.</h2>
+                    <h2 className="proj-heading text-h2 font-semibold text-primary">Here's what<br />the momentum looks like.</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-20">
-                    <div className="group cursor-pointer">
+                    <div className="proj-card group cursor-pointer">
                         <div className="flex justify-between items-end mb-6 px-1">
                             <div>
                                 <h3 className="font-bold text-xl text-primary mb-2">Atlas Technologies</h3>
@@ -29,7 +60,7 @@ export default function Projects() {
                             <img alt="Atlas project" className="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDyi-beGxR5mWboq4-97RO9e00l98NzhA0hl_LG0gxQFGybNMLKDR67-6MW0_dnmBb28Y-XJ1ayvygepHh6r13UaRkOqoqe7V8bjpdW_YIvzqvZZgnd3RJFtrc1sUrsbLTCVJ6tsEBLItmVJ0scECR2FqQUB7WNTNOQ1DPxFvBnhrYVWIx7BPKYGWJxQg8hfLzvk5V_0hBczuFXfIGXw7vywsRZb8stRtVLd1OcpcgIWie3fsh9oycWhIvitk8eaRoEmwslTjssns" />
                         </div>
                     </div>
-                    <div className="group cursor-pointer md:mt-24">
+                    <div className="proj-card group cursor-pointer md:mt-24">
                         <div className="flex justify-between items-end mb-6 px-1">
                             <div>
                                 <h3 className="font-bold text-xl text-primary mb-2">Finlytics</h3>
@@ -38,7 +69,7 @@ export default function Projects() {
                                     <span className="bg-background px-2.5 py-1 rounded border border-border-light">Branding</span>
                                 </div>
                             </div>
-                            <span className="w-9 h-9 rounded-full border border-border-light flex items-center justify-center bg-white group-hover:bg-primary group-hover:text-white transition-all">
+                            <span id="waypoint-project-icon-2" className="w-9 h-9 rounded-full border border-border-light flex items-center justify-center bg-white group-hover:bg-primary group-hover:text-white transition-all">
                                 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                             </span>
                         </div>
@@ -52,7 +83,7 @@ export default function Projects() {
                             </div>
                         </div>
                     </div>
-                    <div className="group cursor-pointer">
+                    <div className="proj-card group cursor-pointer">
                         <div className="flex justify-between items-end mb-6 px-1">
                             <div>
                                 <h3 className="font-bold text-xl text-primary mb-2">Orbital Bank</h3>
@@ -72,7 +103,7 @@ export default function Projects() {
                             </div>
                         </div>
                     </div>
-                    <div className="group cursor-pointer md:mt-24">
+                    <div className="proj-card group cursor-pointer md:mt-24">
                         <div className="flex justify-between items-end mb-6 px-1">
                             <div>
                                 <h3 className="font-bold text-xl text-primary mb-2">Echo Analytics</h3>

@@ -5,7 +5,7 @@ export default function Blog() {
                 <div className="mt-32 pt-32">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                         <div>
-                            <div className="w-2 h-2 bg-accent-new rounded-full mb-6"></div>
+                            <div id="waypoint-blog" className="w-2 h-2 bg-accent-new rounded-full mb-6"></div>
                             <p className="text-[10px] font-bold uppercase text-text-secondary tracking-widest mb-4">Blog</p>
                             <h2 className="text-h2 font-semibold text-primary leading-tight">Fresh insights & ideas<br />from the team.</h2>
                         </div>
@@ -71,7 +71,7 @@ export default function Blog() {
                                         <div className="flex gap-1">
                                             <span className="text-[10px] font-medium border border-border-light px-2 py-0.5 rounded-full bg-background text-text-secondary">Product</span>
                                         </div>
-                                        <div className="w-7 h-7 rounded-full border border-border-light flex items-center justify-center bg-white group-hover:bg-primary group-hover:text-white transition-colors">
+                                        <div id="waypoint-blog-arrow" className="w-7 h-7 rounded-full border border-border-light flex items-center justify-center bg-white group-hover:bg-primary group-hover:text-white transition-colors">
                                             <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
                                         </div>
                                     </div>

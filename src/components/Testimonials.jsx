@@ -1,18 +1,38 @@
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 export default function Testimonials() {
+    const containerRef = useRef(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 70%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        tl.from('.test-heading', { y: 30, opacity: 0 })
+            .from('.test-card', { y: 40, opacity: 0, stagger: 0.15 }, '-=0.4')
+            .from('.test-cta', { scale: 0.95, opacity: 0 }, '-=0.6');
+
+    }, { scope: containerRef });
+
     return (
-        <section className="py-160 bg-background">
+        <section ref={containerRef} className="py-24 bg-background">
             <div className="max-w-screen-xl mx-auto px-6">
                 <div className="text-center mb-24">
-                    <div className="flex items-center justify-center gap-2 mb-6">
-                        <span className="w-2 h-2 rounded-full bg-accent-new"></span>
+                    <div className="test-heading flex items-center justify-center gap-2 mb-6">
+                        <span id="waypoint-testimonials" className="w-2 h-2 rounded-full bg-accent-new"></span>
                         <span className="text-[10px] font-bold uppercase text-text-secondary tracking-widest">Testimonials</span>
                     </div>
-                    <h2 className="text-h2 font-semibold text-primary">We're loved.<br />Just success stories.</h2>
+                    <h2 className="test-heading text-h2 font-semibold text-primary">We're loved.<br />Just success stories.</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <div className="bg-white p-10 rounded-card border border-border-light shadow-subtle h-full flex flex-col justify-between">
+                    <div className="test-card bg-white p-10 rounded-card border border-border-light shadow-subtle h-full flex flex-col justify-between">
                         <div>
                             <div className="flex justify-between items-start mb-6">
                                 <div>
@@ -32,7 +52,7 @@ export default function Testimonials() {
                             <div className="ml-auto opacity-20"><span className="material-symbols-outlined">verified</span></div>
                         </div>
                     </div>
-                    <div className="bg-white p-10 rounded-card border border-border-light shadow-subtle h-full flex flex-col justify-between">
+                    <div className="test-card bg-white p-10 rounded-card border border-border-light shadow-subtle h-full flex flex-col justify-between">
                         <div>
                             <div className="flex justify-between items-start mb-6">
                                 <div>
@@ -52,7 +72,7 @@ export default function Testimonials() {
                             <div className="ml-auto opacity-20"><span className="material-symbols-outlined">verified</span></div>
                         </div>
                     </div>
-                    <div className="bg-white p-10 rounded-card border border-border-light shadow-subtle h-full flex flex-col justify-between">
+                    <div className="test-card bg-white p-10 rounded-card border border-border-light shadow-subtle h-full flex flex-col justify-between">
                         <div>
                             <div className="flex justify-between items-start mb-6">
                                 <div>
@@ -72,7 +92,7 @@ export default function Testimonials() {
                             <div className="ml-auto opacity-20"><span className="material-symbols-outlined">verified</span></div>
                         </div>
                     </div>
-                    <div className="bg-white p-10 rounded-card border border-border-light shadow-subtle h-full flex flex-col justify-between">
+                    <div className="test-card bg-white p-10 rounded-card border border-border-light shadow-subtle h-full flex flex-col justify-between">
                         <div>
                             <div className="flex justify-between items-start mb-6">
                                 <div>
@@ -89,11 +109,11 @@ export default function Testimonials() {
                                 <p className="text-[14px] font-bold text-primary">Julian Ortega</p>
                                 <p className="text-[12px] text-text-secondary">CEO</p>
                             </div>
-                            <div className="ml-auto opacity-20"><span className="material-symbols-outlined">verified</span></div>
+                            <div id="waypoint-testimonial-4" className="ml-auto opacity-20"><span className="material-symbols-outlined">verified</span></div>
                         </div>
                     </div>
                 </div>
-                <div className="bg-primary rounded-card p-12 md:p-16 relative overflow-hidden group text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto mt-16 shadow-2xl">
+                <div className="test-cta bg-primary rounded-card p-12 md:p-16 relative overflow-hidden group text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto mt-16 shadow-2xl">
                     <div className="absolute right-0 bottom-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3"></div>
                     <div className="relative z-10 text-white max-w-xl">
                         <p className="text-[15px] font-medium mb-2 text-gray-400">You focus on your company.</p>

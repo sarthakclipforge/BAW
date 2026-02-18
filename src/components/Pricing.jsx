@@ -6,7 +6,7 @@ export default function Pricing() {
             <div className="max-w-screen-xl mx-auto px-6">
                 <div className="text-center mb-24">
                     <div className="flex items-center justify-center gap-2 mb-6">
-                        <span className="w-2 h-2 rounded-full bg-accent-new"></span>
+                        <span id="waypoint-pricing" className="w-2 h-2 rounded-full bg-accent-new"></span>
                         <span className="text-[10px] font-bold uppercase text-text-secondary tracking-widest">Pricing</span>
                     </div>
                     <h2 className="text-h2 font-semibold text-primary">Choose a plan.<br />That fits your needs.</h2>
@@ -32,7 +32,7 @@ export default function Pricing() {
                         <a className="w-full block text-center bg-primary hover:bg-primary-hover text-white py-3 rounded-pill text-[13px] font-bold transition-colors" href="#">Get Started Now <span className="ml-1">→</span></a>
                     </div>
                     <div className="bg-white p-8 rounded-card border border-border-light shadow-xl flex flex-col h-full relative overflow-hidden transform md:-translate-y-4">
-                        <div className="absolute top-0 right-0 bg-primary text-white text-[9px] px-3 py-1 rounded-bl-lg font-bold tracking-wider">POPULAR</div>
+                        <div id="waypoint-pricing-popular" className="absolute top-0 right-0 bg-primary text-white text-[9px] px-3 py-1 rounded-bl-lg font-bold tracking-wider">POPULAR</div>
                         <div className="w-10 h-10 rounded border border-border-light flex items-center justify-center text-text-primary mb-6 bg-background">
                             <span className="material-symbols-outlined text-[20px]">diamond</span>
                         </div>

@@ -7,7 +7,7 @@ export default function FAQ() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
                     <div className="lg:col-span-4">
                         <div className="sticky top-32">
-                            <div className="w-2 h-2 bg-accent-new rounded-full mb-6"></div>
+                            <div id="waypoint-faq" className="w-2 h-2 bg-accent-new rounded-full mb-6"></div>
                             <p className="text-[10px] font-bold uppercase text-text-secondary tracking-widest mb-4">FAQ</p>
                             <h2 className="text-h2 font-semibold text-primary mb-4 leading-tight">Got a question?<br />We've got answers.</h2>
                             <div className="bg-primary text-white rounded-card p-8 mt-12 relative overflow-hidden text-center md:text-left">
