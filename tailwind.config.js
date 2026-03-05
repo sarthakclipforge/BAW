@@ -21,8 +21,9 @@ export default {
                 "badge-purple": "#8B5CF6", // Approximate purple for custom badge
             },
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
+                sans: ['"Creato Display"', 'Inter', 'sans-serif'],
                 display: ['Inter', 'sans-serif'],
+                serif: ['"Playfair Display"', 'serif'],
                 pixel: ['Pixeled', 'Inter', 'sans-serif'],
             },
             fontSize: {

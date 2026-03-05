@@ -133,8 +133,93 @@
     line-height: inherit;
     display: inline;
   }
+
+  /* ─── Premium Hover & Interaction Utilities ─── */
+  .hover-lift {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.12);
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.4s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(48, 79, 255, 0.15), 0 20px 50px -10px rgba(0, 0, 0, 0.1);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.03);
+  }
+
+  /* 3D Perspective container */
+  .perspective-container {
+    perspective: 1000px;
+  }
+
+  .tilt-card {
+    transition: transform 0.5s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+    transform-style: preserve-3d;
+  }
+
+  /* Shimmer loading effect */
+  .shimmer {
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Image parallax wrapper */
+  .img-parallax {
+    overflow: hidden;
+  }
+
+  .img-parallax img {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .img-parallax:hover img {
+    transform: scale(1.08);
+  }
+
+  /* Gradient text accent */
+  .text-gradient-accent {
+    background: linear-gradient(135deg, #304fff, #6366f1, #818cf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Smooth underline animation */
+  .animated-underline {
+    position: relative;
+  }
+
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #304fff;
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animated-underline:hover::after {
+    width: 100%;
+  }
 }
 
+/* ─── Premium Keyframe Animations ─── */
 @keyframes letter-lock {
   0% {
     transform: scale(1.15);
@@ -153,4 +238,209 @@
 
 .animate-letter-lock {
   animation: letter-lock 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Gradient Orb Animation */
+@keyframes orb-float-1 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+
+  50% {
+    transform: translate(-20px, -60px) scale(0.95);
+  }
+
+  75% {
+    transform: translate(40px, -20px) scale(1.05);
+  }
+}
+
+@keyframes orb-float-2 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(-40px, 30px) scale(1.08);
+  }
+
+  50% {
+    transform: translate(30px, 50px) scale(0.92);
+  }
+
+  75% {
+    transform: translate(-30px, 20px) scale(1.03);
+  }
+}
+
+@keyframes orb-float-3 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-40px, 40px) scale(0.9);
+  }
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.gradient-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #304fff 0%, transparent 70%);
+  animation: orb-float-1 12s ease-in-out infinite;
+}
+
+.gradient-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #818cf8 0%, transparent 70%);
+  animation: orb-float-2 15s ease-in-out infinite;
+}
+
+.gradient-orb-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+  animation: orb-float-3 18s ease-in-out infinite;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Reveal mask animation */
+@keyframes reveal-up {
+  0% {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
+
+  100% {
+    clip-path: inset(0% 0 0 0);
+    opacity: 1;
+  }
+}
+
+.reveal-up {
+  animation: reveal-up 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Stagger reveal utility */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+
+/* Marquee animation for trust strip */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Gradient border hover */
+.gradient-border {
+  position: relative;
+  z-index: 0;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #304fff, #6366f1, #818cf8, #304fff);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Pulse glow on accent elements */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(48, 79, 255, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(48, 79, 255, 0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
